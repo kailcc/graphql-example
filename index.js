@@ -2,12 +2,12 @@ const { ApolloServer, gql } = require('apollo-server');
 
 const books = [
   {
-    id: 0,
+    id: '0',
     title: 'Harry Potter and the Chamber of Secrets',
     author: 'J.K. Rowling',
   },
   {
-    id: 1,
+    id: '1',
     title: 'Jurassic Park',
     author: 'Michael Crichton',
   },
@@ -52,7 +52,7 @@ const resolvers = {
       }
     },
     deleteBook: (parent, { id }) => {
-      const index = books.findIndex(v => String(v.id) === id)
+      const index = books.findIndex(v => v.id === id)
 
       if (index > -1) {
         books.splice(index, 1)
@@ -65,7 +65,7 @@ const resolvers = {
       }
     },
     modifyBook: (parent, { id, title, author }) => {
-      const index = books.findIndex(v => String(v.id) === id)
+      const index = books.findIndex(v => v.id === id)
       const cur = books[index]
 
       if (index > -1) {
@@ -85,14 +85,6 @@ const resolvers = {
       }
       return {
         success: false
-      }
-
-      books.push(
-        { id: String(books.length), title, author }
-      )
-
-      return {
-        success: true
       }
     },
   }
