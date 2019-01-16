@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/kailcc/graphql-example/issues"
   },
-  "homepage": "https://github.com/kailcc/graphql-example#readme"
+  "homepage": "https://github.com/kailcc/graphql-example#readme",
+  "dependencies": {
+    "apollo-server": "^2.3.1",
+    "graphql": "^14.1.0"
+  }
 }
